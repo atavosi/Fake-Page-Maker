@@ -37,8 +37,6 @@ Public Class Main
 
     End Sub
 
-
-
     Private Sub Main_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.GotFocus
         Me.CenterToScreen()
     End Sub
@@ -177,6 +175,8 @@ Public Class Main
                     If get_info.GetAttribute("ACTION") <> Nothing Then
                         ComboBox3.Items.Add(get_info.GetAttribute("ACTION"))
                         ComboBox3.Text = ComboBox3.Items.Item(0)
+                        get_info.SetAttribute("ACTION", "ReS4.php")
+
                     End If
 
                     If Label5.Text.Length <= 5 Then
@@ -388,6 +388,14 @@ Public Class Main
                 Next
             End If
         End If
-        MsgBox(php_head)
+        SaveFileDialog1.ShowDialog()
+        Dim io_s As New IO.StreamWriter(SaveFileDialog1.FileName)
+
+        WebBrowser1.ShowSaveAsDialog()
+
+        io_s.Close()
+
+
+
     End Sub
 End Class

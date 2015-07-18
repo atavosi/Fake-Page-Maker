@@ -71,6 +71,7 @@ Partial Class Main
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Dialogs2 = New Ashiyane_Fake_Page_Maker.Dialogs()
         Me.Dialogs1 = New Ashiyane_Fake_Page_Maker.Dialogs()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -624,6 +625,11 @@ Partial Class Main
         Me.Button4.Text = ".:.:: Create Fake Page ::.:."
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.FileName = "index.html"
+        Me.SaveFileDialog1.Filter = "HTML |*.html|PHP|*.php"
+        '
         'Dialogs2
         '
         Me.Dialogs2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -732,5 +738,6 @@ Partial Class Main
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
 
 End Class
